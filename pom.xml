@@ -1,0 +1,372 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.advantage</groupId>
+	<artifactId>Automacao-FrameWork-BDD-Advantage</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<!-- <frameworkpath.path>C:\Users\Public\lib\FrameworkAutomacaoEdsoft-${frameworkversion.version}.jar</frameworkpath.path> -->
+		<!-- <frameworkpath.path>C:\Users\Public\lib\next-test-${frameworkversion.version}.jar</frameworkpath.path> -->
+		<!-- <frameworkversion.version>2.0.0</frameworkversion.version> -->
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- MAVER CUCUMBER REPORT -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<fork>true</fork>
+					<executable>C:\Program Files\Java\jdk1.8.0_181\bin\javac.exe</executable>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M4</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<!-- <suitesXmlFiles> -->
+					<!-- <suiteXmlFile>src/test/java/TestNg.xml</suiteXmlFile> -->
+					<!-- </suitesXmlFiles> -->
+					<includes>
+						<include>runner/*.java</include>
+<!-- 						<include>src/test/resources/*.xml</include> -->
+						
+					</includes>
+					<parallel>all</parallel>
+					<threadCount>3</threadCount>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.16.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>ExecuteAutomation</projectName>
+							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+							<cucumberOutput>${project.build.directory}/cucumber-json-report.json</cucumberOutput>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- SELENIUM 3.14.0 -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.14.0</version>
+		</dependency>
+
+		<!-- JUNIT TEST 4.12 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- LOG4J API UTIL 2.7 -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.7</version>
+		</dependency>
+
+		<!-- POSTGRESQL DATABASE UTIL 9.4.1209 -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4.1209</version>
+		</dependency>
+
+		<!-- CUCUMBER JUNIT 1.2.5 -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+
+		<!-- CUCUMBER TESTNG 1.2.5 -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<!-- TESTNG and SUPPORT 6.9.13.6 -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.13.6</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>4.1.0</version>
+			<classifier>no_aop</classifier>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- EXTENT REPORTING AVENTSTACK 3.1.5 -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+
+		<!-- SCREENSHOT UTIL COMMONS 2.4 -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!--Utilities EXCEL 2.6.12 -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>openxml4j</artifactId>
+			<version>1.0-beta</version>
+		</dependency>
+
+		<!-- SUPORTE CHROME DRIVER 3.3.0 -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+		<!-- Utilities PNG 5.5.13.1 -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.5.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-core</artifactId>
+			<version>3.5</version>
+		</dependency>
+
+		<!-- CUCUMBER UPDATE 5.7.0 -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>5.7.0</version>
+		</dependency>
+
+		<!-- JSON DATABIND 2.10.0 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+
+		<!-- DATA DRIVING TESTING 1.3.1 -->
+		<dependency>
+			<groupId>org.easetech</groupId>
+			<artifactId>easytest-core</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- ALLURE REPORT 2.7.0 -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+		<!-- APPIUM 7.2.0 -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>7.2.0</version>
+		</dependency>
+
+		<!-- SUPPORT GROOVY JARPERREPORT 2.0.0 -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<!-- JASPERREPORT 5.1.2 -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
+
+		<!-- SUPPORT JASPERREPORT 2.1.7 -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+
+		<!-- Utilities PDF BOX 2.0.14 -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.14</version>
+		</dependency>
+
+		<!-- API RestAssured 4.0.0 -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+
+		<!-- SUPPPORT GSON 2.8.5 -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
+		<!-- SUPPORT ITEXT 2.1.0 -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- JSON SCHEMA VALIDATOR RESTASSURED 4.0.0 -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+		<!-- HAMCREST-CORE 2.2 -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<version>2.2</version>
+		</dependency>
+		
+		<!-- SUPPORT GROOVY -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.11</version>
+		</dependency>
+
+		<!-- API RestAssured 4.0.0 -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+
+		<!--JSON SCHEMA VALIDATOR 4.1.2-->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+
+		<!-- LONMBOK MECANIMO DE BUILDER 1.18.10-->
+        <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.10</version>
+        <scope>provided</scope>
+        </dependency>
+		
+
+		<!-- FrameworkAutomacaoEdsoft -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.edsoft.framework.</groupId> -->
+		<!-- <artifactId>FrameworkAutomacaoEdsoft</artifactId> -->
+		<!-- <systemPath>${frameworkpath.path}</systemPath> -->
+		<!-- <version>${frameworkversion.version}</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- </dependency> -->
+
+		<!-- Framework NEXT -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.next.core</groupId> -->
+		<!-- <artifactId>next-test-2.0.0</artifactId> -->
+		<!-- <systemPath>${frameworkpath.path}</systemPath> -->
+		<!-- <version>${frameworkversion.version}</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- </dependency> -->
+	</dependencies>
+</project>
