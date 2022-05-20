@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+	<!-- parallel="tests" -->
+<suite name="Suite">
+
+      <!-- TESTE REGRESSIVO -->
+	<listeners>
+		<listener
+			class-name="com.edsoft.framework.listeners.web.ListenerTestWeb"></listener>
+	</listeners>
+
+	<!-- JORNADA CADASTRAR USUARIO -->
+	<test name="Valida Usuario Cadastrado CT0011">
+		<classes>
+			<class name="teste.web.regressivo.cadastrarUsuario.CT0011"></class>
+		</classes>
+	</test>
+<!-- 	<test name="Valida Usuario Cadastrado CT0012"> -->
+<!-- 		<classes> -->
+<!-- 		<class name="teste.web.regressivo.cadastrarUsuario.CT0012"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="Valida Usuario Cadastrado CT0013"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.cadastrarUsuario.CT0013"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="Valida Usuario Cadastrado CT0014"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.cadastrarUsuario.CT0014"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="Valida Usuario Cadastrado CT0015"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.cadastrarUsuario.CT0015"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+
+	<!-- JORNADA ADICIONAR PRODUTO -->
+<!-- 	<test name="Adicionar Produto Carrinho CT0001"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.adicionarProduto.CT0001"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="Adicionar Produto Carrinho CT0002"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.adicionarProduto.CT0002"></class> -->
+<!-- 		</classes> -->	
+<!-- 	</test> -->
+<!-- 	<test name="Adicionar Produto Carrinho CT0003"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.adicionarProduto.CT0003"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="Adicionar Produto Carrinho CT0004"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.adicionarProduto.CT0004"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="Adicionar Produto Carrinho CT0005"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="teste.web.regressivo.adicionarProduto.CT0005"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+
+<!-- TESTE REMOTO SELENIUM GRID -->
+
+<!--     <listeners> -->
+<!--         <listener class-name="executor_cucumber.ReportListener" /> -->
+<!--         <listener class-name="executor_cucumber.TestNgListener" /> -->
+<!--     </listeners> -->
+    
+    
+<!--     <test name="Test -1" parallel="classes"> -->
+<!--         <classes> -->
+<!--             <class name="executor_cucumber.Runner"> -->
+<!--                 <methods> -->
+<!--                     <include name="runTest"/> -->
+<!--                 </methods>  -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+    
+    
+<!--     <test name="Login" parallel="classes"> -->
+<!--         <classes> -->
+<!--             <class name="runner.TestRunner"> -->
+<!--                 <methods> -->
+<!--                     <include name="EmployeeTest"/> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+
+</suite>
+
