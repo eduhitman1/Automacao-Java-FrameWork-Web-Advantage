@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="evidenciaInMetrics" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="f3ae1af6-6b58-49cb-b281-b5a1f4d07880">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NEXT_PROJECT" class="java.lang.String"/>
+	<parameter name="NEXT_TESTER" class="java.lang.String"/>
+	<parameter name="NEXT_MESSAGE" class="java.lang.String"/>
+	<parameter name="NEXT_EVIDENCE_IMAGE" class="java.lang.String"/>
+	<parameter name="NEXT_EXCEPTION" class="java.lang.String"/>
+	<parameter name="NEXT_COMPANY_LOGO" class="java.lang.Object"/>
+	<parameter name="NEXT_CUSTOMER_LOGO" class="java.lang.Object"/>
+	<parameter name="NEXT_LABEL_EVIDENCE_TITLE" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_PROJECT" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_TESTER" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_DATE" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_STATUS" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_PASS" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_FAILED" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_ERROR_DETAIL" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_FOOTER" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_PAGE" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_EVIDENCE_REPORT" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_COMPANY_NAME" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_CT_NAME" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_CT_DESCRIPTION" class="java.lang.String"/>
+	<parameter name="NEXT_LABEL_CT_SEVERITY" class="java.lang.String"/>
+	<field name="message" class="java.lang.String"/>
+	<field name="image" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="51" width="555" height="1" uuid="dccf4483-4f2b-4a15-934c-71ecc9c9cd7f"/>
+			</line>
+			<image>
+				<reportElement x="4" y="7" width="129" height="39" uuid="7b86a586-7da6-4a9a-a473-828ae5f4527e"/>
+				<imageExpression><![CDATA[$P{NEXT_CUSTOMER_LOGO}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="426" y="7" width="129" height="39" uuid="de42dbf6-6fa0-4e0b-85a0-dc329dd26c89"/>
+				<imageExpression><![CDATA[$P{NEXT_COMPANY_LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="133" y="0" width="293" height="31" uuid="cbf46c99-be98-44d3-96c7-0e65724be19a"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_COMPANY_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="133" y="31" width="293" height="17" uuid="f59a819d-cf23-4a3b-ad0c-98009b0346eb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                           Edsoft - Evidência de Teste]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="48" width="184" height="16" uuid="29d1fc3f-782d-4c10-b469-861cd1b265b3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_TESTER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yyyy h:mm:ss a">
+				<reportElement x="327" y="64" width="228" height="15" uuid="40ce7cb0-07f8-47ff-b488-937d57fa2cd4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="48" width="63" height="16" uuid="102a8297-c40c-4b9a-a9b2-851457991250">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_PROJECT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="48" width="80" height="16" uuid="320196cc-5bb2-422d-9952-ab0e1f7414ec">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_TESTER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="64" width="63" height="15" uuid="9fb7a828-2f8c-4f95-a57b-aad6e501202d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="64" width="79" height="15" uuid="dd93f785-a8d4-4990-95d6-b5bcdcf542a5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_STATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="48" width="228" height="16" uuid="5bcdcc49-c172-4a17-b790-5a1dc5b4834c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_PROJECT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="64" width="184" height="15" forecolor="#FF0000" uuid="6d033018-cb63-4787-a5e3-2bbab6ebc4a7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{NEXT_EXCEPTION}.length() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_FAILED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="-1" width="555" height="24" uuid="4c3b6f70-a075-415c-9e08-afef770ba716"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_CT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="23" width="555" height="25" uuid="a47af93d-fc39-4cd0-939a-c445a0ec5482"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_CT_DESCRIPTION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="500" splitType="Prevent">
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="50" y="17" width="505" height="22" uuid="1ebc7b7a-9c8a-42ac-bf95-f87e5b3a8060"/>
+				<textFieldExpression><![CDATA[$F{message}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="146" y="50" width="266" height="450" uuid="d3d8155c-2ec1-4164-8499-5f7992caf6da"/>
+				<imageExpression><![CDATA[$F{image}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="4" y="17" width="47" height="22" uuid="80892253-e9ca-46a6-a4b0-060845882af6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[[Passo]]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="-15" width="184" height="15" forecolor="#00FF00" uuid="58759871-0a77-4338-8b91-c210c3a663f9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{NEXT_EXCEPTION}.length() == 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_PASS}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="fa82db06-a9a0-4cf9-99e3-d87bbba8c967">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<line>
+				<reportElement x="1" y="10" width="554" height="1" uuid="183e9a6d-d558-4ffe-828e-590b26ad02bf"/>
+			</line>
+			<textField>
+				<reportElement x="2" y="25" width="552" height="20" uuid="001575ec-7052-4c5d-8b86-55f297a71a05"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_PAGE}+ " " + $V{PAGE_NUMBER}+" de" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="10" width="553" height="15" uuid="091f5232-f017-414d-8bc3-b51567d887ac"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_FOOTER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="45" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{NEXT_EXCEPTION}.length() > 0]]></printWhenExpression>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="1" y="20" width="554" height="18" forecolor="#FF0000" uuid="f0712fbe-c3f2-480f-ab72-1147c1451e5a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_EXCEPTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="553" height="20" uuid="b5b20e8b-e28c-4f37-8596-fc1a820362b3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NEXT_LABEL_ERROR_DETAIL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
